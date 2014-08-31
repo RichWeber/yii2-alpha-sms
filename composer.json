@@ -17,6 +17,6 @@
 		}
 	],
 	"autoload": {
-		"psr-4": { "richweber\\yii2\\alpha\\sms\\": "" }
+		"psr-4": { "richweber\\alpha\\sms\\": "" }
 	}
 }
