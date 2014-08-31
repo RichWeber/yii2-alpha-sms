@@ -1,0 +1,22 @@
+{
+	"name": "richweber/yii2-alpha-sms",
+	"version":"1.0.0",
+	"description": "AlphaSMS API for the Yii framework",
+	"keywords": ["yii2", "aplhasms", "sms", "api"],
+	"type": "yii2-extension",
+	"license": "BSD-3-Clause",
+	"support": {
+		"issues": "",
+		"wiki": "",
+		"source": ""
+	},
+	"authors": [
+		{
+			"name": "RichWeber",
+			"email": "rbagatyi@gmail.com"
+		}
+	],
+	"autoload": {
+		"psr-4": { "richweber\\yii2\\alpha\\sms\\": "" }
+	}
+}
