@@ -1,5 +1,5 @@
 <?php
-namespace richweber\yii\alpha\sms;
+namespace richweber\alpha\sms;
 
 class AlphaSms
 {
