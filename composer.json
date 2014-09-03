@@ -16,6 +16,9 @@
 			"email": "rbagatyi@gmail.com"
 		}
 	],
+	"require": {
+		"yiisoft/yii2-app-basic": "*"
+	},
 	"autoload": {
 		"psr-4": { "richweber\\alpha\\sms\\": "" }
 	}
