@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Расширение для Yii Framework 2 для работы с API cервиса AlphaSMS.
+ * Расширение Yii Framework 2 для работы с API cервиса AlphaSMS.
  *
  * @copyright Copyright &copy; Roman Bahatyi, richweber.net, 2014
  * @package yii2-alpha-sms
