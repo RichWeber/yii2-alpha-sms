@@ -52,7 +52,7 @@ use yii\base\InvalidConfigException;
 class AlphaSms
 {
     /**
-     * @var string Логин пользователя Alph-SMS
+     * @var string Логин пользователя Alpha-SMS
      */
     public $login;
 
