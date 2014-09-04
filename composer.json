@@ -17,7 +17,7 @@
 		}
 	],
 	"require": {
-		"yiisoft/yii2-app-basic": "*"
+		"yiisoft/yii2": "*"
 	},
 	"autoload": {
 		"psr-4": { "richweber\\alpha\\sms\\": "" }
