@@ -17,10 +17,10 @@ php composer.phar require richweber/yii2-alpha-sms "*"
 или добавьте
 
 ```
-"richweber/yii2-alpha-sms": "*"
+"richweber/yii2-alpha-sms":"*"
 ```
 
-в раздел require вашего `composer.json` файла.
+в раздел `require` вашего `composer.json` файла.
 
 ### Конфигурация приложения
 
@@ -34,8 +34,8 @@ php composer.phar require richweber/yii2-alpha-sms "*"
         'sender' => 'AlphaName',
         'login' => '380505550505',
         'password' => 'password',
-        or
-        'key' => '184452c06ft1e2f548aa18243fb6226h79764563',
+        // or
+        // 'key' => '184452c06ft1e2f548aa18243fb6226h79764563',
     ],
     ...
 ],
