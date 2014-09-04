@@ -6,9 +6,9 @@
 	"type": "yii2-extension",
 	"license": "BSD-3-Clause",
 	"support": {
-		"issues": "",
-		"wiki": "",
-		"source": ""
+		"issues": "https://github.com/RichWeber/yii2-alpha-sms/issues",
+		"wiki": "https://github.com/RichWeber/yii2-alpha-sms/wiki",
+		"source": "https://github.com/RichWeber/yii2-alpha-sms"
 	},
 	"authors": [
 		{
