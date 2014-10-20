@@ -17,7 +17,7 @@ php composer.phar require richweber/yii2-alpha-sms "*"
 или добавьте
 
 ```
-"richweber/yii2-alpha-sms":"*"
+"richweber/yii2-alpha-sms": "*"
 ```
 
 в раздел `require` вашего `composer.json` файла.
