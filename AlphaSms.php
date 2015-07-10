@@ -195,7 +195,7 @@ class AlphaSms
     {
         if (
             (!isset($data['id']) && !isset($data['sms_id']))
-            || (!(integer)$data['id'] && !(integer)$data['sms_id'])
+            || !(integer)$data['sms_id'])
         ) {
             throw new InvalidConfigException("Must be specified one of the parameters 'id' or 'sms_id'.");
         }
