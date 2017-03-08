@@ -54,19 +54,19 @@ class AlphaSms
     /**
      * @var string Логин пользователя Alpha-SMS
      */
-    public $login;
+    private $login;
 
     /**
      * @var string Пароль для входа
      *
      */
-    public $password;
+    private $password;
 
     /**
      * @var string API-ключ
      *
      */
-    public $key;
+    private $key;
 
     /**
      * @var string Альфа-имя отправителя сообщения
@@ -105,6 +105,30 @@ class AlphaSms
     const TYPE_MESSAGE_VOICE = 3;
 
     /**
+     * AlphaSms constructor.
+     *
+     * @param null $login
+     * @param null $password
+     * @param null $apiKey
+     * @param null $sender
+     *
+     * @throws InvalidConfigException
+     */
+    public function __construct($login = null, $password = null, $apiKey = null, $sender = null)
+    {
+        $this->login = $login;
+        $this->password = $password;
+        $this->key = $apiKey;
+        $this->sender = $sender;
+
+        if ($this->login === null && $this->password === null && $this->key === null) {
+            throw new InvalidConfigException('Invalid configuration');
+        } elseif ($this->key === null && ($this->login === null || $this->password === null)) {
+            throw new InvalidConfigException('Invalid login or password');
+        }
+    }
+
+    /**
      * Отправляем сообщение
      *
      * Время отправки и окончания срока жизни SMS
@@ -130,7 +154,9 @@ class AlphaSms
      */
     public function message($data)
     {
-        if (isset($data['sender'])) $this->sender = $data['sender'];
+        if (isset($data['sender'])) {
+            $this->sender = $data['sender'];
+        }
         if (!$this->sender) {
             throw new InvalidConfigException("Invalid 'sender'.");
         } else {
@@ -193,10 +219,7 @@ class AlphaSms
      */
     public function status($data)
     {
-        if (
-            (!isset($data['id']) && !isset($data['sms_id']))
-            || !(integer)$data['sms_id']
-        ) {
+        if (!isset($data['id']) && !isset($data['sms_id'])) {
             throw new InvalidConfigException("Must be specified one of the parameters 'id' or 'sms_id'.");
         }
 
@@ -219,10 +242,7 @@ class AlphaSms
      */
     public function delete($data)
     {
-        if (
-            (!isset($data['id']) && !isset($data['sms_id']))
-            || (!(integer)$data['id'] && !(integer)$data['sms_id'])
-        ) {
+        if (!isset($data['id']) && !isset($data['sms_id'])) {
             throw new InvalidConfigException("Must be specified one of the parameters 'id' or 'sms_id'.");
         }
 
