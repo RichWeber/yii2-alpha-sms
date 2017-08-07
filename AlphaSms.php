@@ -12,6 +12,7 @@ namespace richweber\alpha\sms;
 
 use stdClass;
 use SimpleXMLElement;
+use yii\base\Component;
 use yii\base\InvalidConfigException;
 
 /**
@@ -49,24 +50,24 @@ use yii\base\InvalidConfigException;
  *
  */
 
-class AlphaSms
+class AlphaSms extends Component
 {
     /**
      * @var string Логин пользователя Alpha-SMS
      */
-    private $login;
+    public $login;
 
     /**
      * @var string Пароль для входа
      *
      */
-    private $password;
+    public $password;
 
     /**
      * @var string API-ключ
      *
      */
-    private $key;
+    public $key;
 
     /**
      * @var string Альфа-имя отправителя сообщения
@@ -105,22 +106,12 @@ class AlphaSms
     const TYPE_MESSAGE_VOICE = 3;
 
     /**
-     * AlphaSms constructor.
-     *
-     * @param null $login
-     * @param null $password
-     * @param null $apiKey
-     * @param null $sender
+     * AlphaSms init.
      *
      * @throws InvalidConfigException
      */
-    public function __construct($login = null, $password = null, $apiKey = null, $sender = null)
+    public function init()
     {
-        $this->login = $login;
-        $this->password = $password;
-        $this->key = $apiKey;
-        $this->sender = $sender;
-
         if ($this->login === null && $this->password === null && $this->key === null) {
             throw new InvalidConfigException('Invalid configuration');
         } elseif ($this->key === null && ($this->login === null || $this->password === null)) {
